@@ -1,4 +1,4 @@
-# datasize [![Build Status](https://travis-ci.org/c2h5oh/datasize.svg?branch=master)](https://travis-ci.org/c2h5oh/datasize)
+# datasize [![Build Status](https://travis-ci.org/ggaaooppeenngg/datasize.svg?branch=master)](https://travis-ci.org/ggaaooppeenngg/datasize)
 
 Golang helpers for data sizes
 
