@@ -126,12 +126,17 @@ func (b *ByteSize) UnmarshalText(t []byte) error {
 
 	var c byte
 	var i int
+	var afterFloat bool
 
 ParseLoop:
 	for i < len(t) {
 		c = t[i]
 		switch {
 		case '0' <= c && c <= '9':
+			if afterFloat {
+				i++
+				continue
+			}
 			if val > cutoff {
 				goto Overflow
 			}
@@ -145,7 +150,9 @@ ParseLoop:
 			}
 			val += uint64(c)
 			i++
-
+		case c == '.':
+			afterFloat = true
+			i++
 		default:
 			if i == 0 {
 				goto SyntaxError

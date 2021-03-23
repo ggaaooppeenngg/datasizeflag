@@ -65,6 +65,7 @@ func TestUnmarshalText(t *testing.T) {
 		{"g", true, ByteSize(0)},
 		{"10 kB ", false, 10 * KB},
 		{"10 kBs ", true, ByteSize(0)},
+		{"10.00 GB", false, 10 * GB},
 	}
 
 	for _, tt := range table {
